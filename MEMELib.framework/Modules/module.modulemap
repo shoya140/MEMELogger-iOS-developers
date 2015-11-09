@@ -1,0 +1,6 @@
+framework module MEMELib {
+  umbrella header "MEMELib.h"
+
+  export *
+  module * { export * }
+}

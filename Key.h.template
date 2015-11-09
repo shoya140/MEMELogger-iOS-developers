@@ -1,0 +1,15 @@
+//
+//  Key.h
+//  MEMESample
+//
+//  Created by Shoya Ishimaru on 2015/11/09.
+//  Copyright © 2015年 shoya140. All rights reserved.
+//
+
+#ifndef Key_h
+#define Key_h
+
+#define MEME_APP_ID "YOUR_MEME_APP_ID"
+#define MEME_APP_SECRET "YOUR_MEME_APP_SECRET"
+
+#endif /* Key_h */
