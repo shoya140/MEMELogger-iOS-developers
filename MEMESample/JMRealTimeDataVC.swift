@@ -44,23 +44,50 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 4
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return 4
+        case 2:
+            return 7
+        case 3:
+            return 2
+        default:
+            break
+        }
         return 14
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             return 100
         } else {
             return 160
         }
     }
     
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Blink Detection"
+        case 1:
+            return "Eye Movement"
+        case 2:
+            return "Head Movement"
+        case 3:
+            return "Utility"
+        default:
+            return ""
+        }
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCellWithIdentifier("EyeCell", forIndexPath: indexPath)
             let eyeView = (cell.viewWithTag(1) as! EyeView)
@@ -72,113 +99,129 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             eyeView.setNeedsDisplay()
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-            (cell.viewWithTag(1) as! UILabel).text = "Blink Strength"
-            (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _blinkStrengths.last!)
-            (cell.viewWithTag(3) as! GraphView).maximumValue = 200
-            (cell.viewWithTag(3) as! GraphView).minimumValue = 0
-            (cell.viewWithTag(3) as! GraphView).values = _blinkStrengths
-            return cell
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Blink Strength"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _blinkStrengths.last!)
+                (cell.viewWithTag(3) as! GraphView).maximumValue = 200
+                (cell.viewWithTag(3) as! GraphView).minimumValue = 0
+                (cell.viewWithTag(3) as! GraphView).values = _blinkStrengths
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Blink Speed"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _blinkSpeeds.last!)
+                (cell.viewWithTag(3) as! GraphView).maximumValue = 200
+                (cell.viewWithTag(3) as! GraphView).minimumValue = 0
+                (cell.viewWithTag(3) as! GraphView).values = _blinkSpeeds
+                return cell
+            case 2:
+                let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Vertical Eye Movement"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _verticalEyeMovements.last!)
+                (cell.viewWithTag(3) as! GraphView).maximumValue = 10
+                (cell.viewWithTag(3) as! GraphView).minimumValue = -10
+                (cell.viewWithTag(3) as! GraphView).values = _verticalEyeMovements
+                return cell
+            case 3:
+                let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Horizonal Eye Movement"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _horizontalEyeMovements.last!)
+                (cell.viewWithTag(3) as! GraphView).maximumValue = 10
+                (cell.viewWithTag(3) as! GraphView).minimumValue = -10
+                (cell.viewWithTag(3) as! GraphView).values = _horizontalEyeMovements
+                return cell
+            default:
+                break
+            }
         case 2:
-            let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-            (cell.viewWithTag(1) as! UILabel).text = "Blink Speed"
-            (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _blinkSpeeds.last!)
-            (cell.viewWithTag(3) as! GraphView).maximumValue = 200
-            (cell.viewWithTag(3) as! GraphView).minimumValue = 0
-            (cell.viewWithTag(3) as! GraphView).values = _blinkSpeeds
-            return cell
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Acceleration X"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _accXValues.last!)
+                (cell.viewWithTag(3) as! GraphView).maximumValue = 50
+                (cell.viewWithTag(3) as! GraphView).minimumValue = -50
+                (cell.viewWithTag(3) as! GraphView).values = _accXValues
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Acceleration Y"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _accYValues.last!)
+                (cell.viewWithTag(3) as! GraphView).maximumValue = 50
+                (cell.viewWithTag(3) as! GraphView).minimumValue = -50
+                (cell.viewWithTag(3) as! GraphView).values = _accYValues
+                return cell
+            case 2:
+                let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Acceleration Z"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _accZValues.last!)
+                (cell.viewWithTag(3) as! GraphView).maximumValue = 50
+                (cell.viewWithTag(3) as! GraphView).minimumValue = -50
+                (cell.viewWithTag(3) as! GraphView).values = _accZValues
+                return cell
+            case 3:
+                let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Gyro Roll"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _gyroRValues.last!)
+                (cell.viewWithTag(3) as! GraphView).maximumValue = 90
+                (cell.viewWithTag(3) as! GraphView).minimumValue = -90
+                (cell.viewWithTag(3) as! GraphView).values = _gyroRValues
+                return cell
+            case 4:
+                let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Gyro Pitch"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _gyroPValues.last!)
+                (cell.viewWithTag(3) as! GraphView).maximumValue = 180
+                (cell.viewWithTag(3) as! GraphView).minimumValue = -180
+                (cell.viewWithTag(3) as! GraphView).values = _gyroPValues
+                return cell
+            case 5:
+                let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Gyro Yaw"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _gyroYValues.last!)
+                (cell.viewWithTag(3) as! GraphView).maximumValue = 360
+                (cell.viewWithTag(3) as! GraphView).minimumValue = 0
+                (cell.viewWithTag(3) as! GraphView).values = _gyroYValues
+                return cell
+            case 6:
+                let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Walking Detection"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _isWalkings.last!)
+                (cell.viewWithTag(3) as! GraphView).maximumValue = 2
+                (cell.viewWithTag(3) as! GraphView).minimumValue = -2
+                (cell.viewWithTag(3) as! GraphView).values = _isWalkings
+                return cell
+            default:
+                break
+            }
         case 3:
-            let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-            (cell.viewWithTag(1) as! UILabel).text = "Vertical Eye Movement"
-            (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _verticalEyeMovements.last!)
-            (cell.viewWithTag(3) as! GraphView).maximumValue = 10
-            (cell.viewWithTag(3) as! GraphView).minimumValue = -10
-            (cell.viewWithTag(3) as! GraphView).values = _verticalEyeMovements
-            return cell
-        case 4:
-            let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-            (cell.viewWithTag(1) as! UILabel).text = "Horizonal Eye Movement"
-            (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _horizontalEyeMovements.last!)
-            (cell.viewWithTag(3) as! GraphView).maximumValue = 10
-            (cell.viewWithTag(3) as! GraphView).minimumValue = -10
-            (cell.viewWithTag(3) as! GraphView).values = _horizontalEyeMovements
-            return cell
-        case 5:
-            let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-            (cell.viewWithTag(1) as! UILabel).text = "Acceleration X"
-            (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _accXValues.last!)
-            (cell.viewWithTag(3) as! GraphView).maximumValue = 50
-            (cell.viewWithTag(3) as! GraphView).minimumValue = -50
-            (cell.viewWithTag(3) as! GraphView).values = _accXValues
-            return cell
-        case 6:
-            let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-            (cell.viewWithTag(1) as! UILabel).text = "Acceleration Y"
-            (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _accYValues.last!)
-            (cell.viewWithTag(3) as! GraphView).maximumValue = 50
-            (cell.viewWithTag(3) as! GraphView).minimumValue = -50
-            (cell.viewWithTag(3) as! GraphView).values = _accYValues
-            return cell
-        case 7:
-            let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-            (cell.viewWithTag(1) as! UILabel).text = "Acceleration Z"
-            (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _accZValues.last!)
-            (cell.viewWithTag(3) as! GraphView).maximumValue = 50
-            (cell.viewWithTag(3) as! GraphView).minimumValue = -50
-            (cell.viewWithTag(3) as! GraphView).values = _accZValues
-            return cell
-        case 8:
-            let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-            (cell.viewWithTag(1) as! UILabel).text = "Gyro Roll"
-            (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _gyroRValues.last!)
-            (cell.viewWithTag(3) as! GraphView).maximumValue = 90
-            (cell.viewWithTag(3) as! GraphView).minimumValue = -90
-            (cell.viewWithTag(3) as! GraphView).values = _gyroRValues
-            return cell
-        case 9:
-            let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-            (cell.viewWithTag(1) as! UILabel).text = "Gyro Pitch"
-            (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _gyroPValues.last!)
-            (cell.viewWithTag(3) as! GraphView).maximumValue = 180
-            (cell.viewWithTag(3) as! GraphView).minimumValue = -180
-            (cell.viewWithTag(3) as! GraphView).values = _gyroPValues
-            return cell
-        case 10:
-            let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-            (cell.viewWithTag(1) as! UILabel).text = "Gyro Yaw"
-            (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _gyroYValues.last!)
-            (cell.viewWithTag(3) as! GraphView).maximumValue = 360
-            (cell.viewWithTag(3) as! GraphView).minimumValue = 0
-            (cell.viewWithTag(3) as! GraphView).values = _gyroYValues
-            return cell
-        case 11:
-            let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-            (cell.viewWithTag(1) as! UILabel).text = "Walking Detection"
-            (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _isWalkings.last!)
-            (cell.viewWithTag(3) as! GraphView).maximumValue = 2
-            (cell.viewWithTag(3) as! GraphView).minimumValue = -2
-            (cell.viewWithTag(3) as! GraphView).values = _isWalkings
-            return cell
-        case 12:
-            let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-            (cell.viewWithTag(1) as! UILabel).text = "Fit Error"
-            (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _fitErrors.last!)
-            (cell.viewWithTag(3) as! GraphView).maximumValue = 4
-            (cell.viewWithTag(3) as! GraphView).minimumValue = 0
-            (cell.viewWithTag(3) as! GraphView).values = _fitErrors
-            return cell
-        case 13:
-            let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-            (cell.viewWithTag(1) as! UILabel).text = "Power Left"
-            (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _powerLefts.last!)
-            (cell.viewWithTag(3) as! GraphView).maximumValue = 5
-            (cell.viewWithTag(3) as! GraphView).minimumValue = 1
-            (cell.viewWithTag(3) as! GraphView).values = _powerLefts
-            return cell
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Fit Error"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _fitErrors.last!)
+                (cell.viewWithTag(3) as! GraphView).maximumValue = 4
+                (cell.viewWithTag(3) as! GraphView).minimumValue = 0
+                (cell.viewWithTag(3) as! GraphView).values = _fitErrors
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Power Left"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _powerLefts.last!)
+                (cell.viewWithTag(3) as! GraphView).maximumValue = 5
+                (cell.viewWithTag(3) as! GraphView).minimumValue = 1
+                (cell.viewWithTag(3) as! GraphView).values = _powerLefts
+                return cell
+            default:
+                break
+            }
         default:
-            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-            return cell
+            break
         }
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        return cell
     }
     
     // MARK: - MEMELib delegate
