@@ -1,5 +1,5 @@
 //
-//  MPScanViewController.swift
+//  JMScanVC.swift
 //  MEMESample
 //
 //  Created by Shoya Ishimaru on 2015/11/09.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MPScanViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MEMELibDelegate {
+class JMScanVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MEMELibDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,23 +18,25 @@ class MPScanViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
 
         MEMELib.sharedInstance().delegate = self
+        MEMELib.sharedInstance().disconnectPeripheral()
         MEMELib.sharedInstance().addObserver(self, forKeyPath: "centralManagerEnabled", options: NSKeyValueObservingOptions.New, context: nil)
-        _peripheralsFound = []
+        MEMELib.sharedInstance().startScanningPeripherals()
         
+        _peripheralsFound = []
         tableView.dataSource = self
         tableView.delegate = self
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if keyPath == "centralManagerEnabled" {
-            self.navigationItem.rightBarButtonItem?.enabled = true
+            MEMELib.sharedInstance().startScanningPeripherals()
         }
     }
-
-    @IBAction func scanButtonTapped(sender: AnyObject) {
-        MEMELib.sharedInstance().startScanningPeripherals()
-    }
     
+    @IBAction func cancelButtonTapped(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -57,7 +59,7 @@ class MPScanViewController: UIViewController, UITableViewDelegate, UITableViewDa
         MEMELib.sharedInstance().connectPeripheral(_peripheralsFound[indexPath.row])
     }
 
-    // MARK: - MEMELib Delegates
+    // MARK: - MEMELib delegate
     
     func memePeripheralFound(peripheral: CBPeripheral!) {
         NSLog("MEME Peripheral Found %@", peripheral.identifier.UUIDString)
@@ -67,26 +69,7 @@ class MPScanViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func memePeripheralConnected(peripheral: CBPeripheral!) {
         NSLog("MEME Device Connected %@", peripheral.identifier.UUIDString)
-        MEMELib.sharedInstance().changeDataMode(MEME_COM_REALTIME)
-        
-        self.navigationItem.rightBarButtonItem?.enabled = false
-        self.tableView.userInteractionEnabled = false
-    }
-    
-    func memeStandardModeDataReceived(data: MEMEStandardData!) {
-        NSLog("standard data: %@",data)
-    }
-    
-    func memeRealTimeModeDataReceived(data: MEMERealTimeData!) {
-        NSLog("realtime data: %@",data)
-    }
-    
-    func memeDataModeChanged(mode: MEMEDataMode) {
-        
-    }
-    
-    func memeAppAuthorized(status: MEMEStatus) {
-        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func memePeripheralDisconnected(peripheral: CBPeripheral!) {

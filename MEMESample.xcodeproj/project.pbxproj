@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C655B6351BF1867D002E8336 /* JMRealTimeDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C655B6341BF1867D002E8336 /* JMRealTimeDataVC.swift */; };
+		C655B6371BF18738002E8336 /* JMStandardDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C655B6361BF18738002E8336 /* JMStandardDataVC.swift */; };
+		C655B63A1BF1AADE002E8336 /* EyeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C655B6391BF1AADE002E8336 /* EyeView.swift */; };
+		C655B6401BF1ABBF002E8336 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C655B63F1BF1ABBF002E8336 /* GraphView.swift */; };
+		C655B6421BF1ABF7002E8336 /* EyeMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C655B6411BF1ABF7002E8336 /* EyeMovement.swift */; };
 		C67D05F81BF0AE5900E63FA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67D05F71BF0AE5900E63FA3 /* AppDelegate.swift */; };
 		C67D05FD1BF0AE5900E63FA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C67D05FB1BF0AE5900E63FA3 /* Main.storyboard */; };
 		C67D05FF1BF0AE5900E63FA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C67D05FE1BF0AE5900E63FA3 /* Assets.xcassets */; };
 		C67D06021BF0AE5900E63FA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C67D06001BF0AE5900E63FA3 /* LaunchScreen.storyboard */; };
 		C67D060A1BF0AE6E00E63FA3 /* MEMELib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C67D06091BF0AE6E00E63FA3 /* MEMELib.framework */; };
 		C67D060C1BF0AE8000E63FA3 /* MEMELib.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C67D06091BF0AE6E00E63FA3 /* MEMELib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C67D06101BF0AFC500E63FA3 /* MPScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67D060F1BF0AFC500E63FA3 /* MPScanViewController.swift */; };
+		C67D06101BF0AFC500E63FA3 /* JMScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67D060F1BF0AFC500E63FA3 /* JMScanVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +35,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C655B6341BF1867D002E8336 /* JMRealTimeDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMRealTimeDataVC.swift; sourceTree = "<group>"; };
+		C655B6361BF18738002E8336 /* JMStandardDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMStandardDataVC.swift; sourceTree = "<group>"; };
+		C655B6391BF1AADE002E8336 /* EyeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeView.swift; sourceTree = "<group>"; };
+		C655B63F1BF1ABBF002E8336 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		C655B6411BF1ABF7002E8336 /* EyeMovement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeMovement.swift; sourceTree = "<group>"; };
 		C67D05F41BF0AE5900E63FA3 /* MEMESample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MEMESample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C67D05F71BF0AE5900E63FA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C67D05FC1BF0AE5900E63FA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,7 +49,7 @@
 		C67D06091BF0AE6E00E63FA3 /* MEMELib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MEMELib.framework; sourceTree = "<group>"; };
 		C67D060D1BF0AEF700E63FA3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		C67D060E1BF0AF7300E63FA3 /* Key.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
-		C67D060F1BF0AFC500E63FA3 /* MPScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPScanViewController.swift; sourceTree = "<group>"; };
+		C67D060F1BF0AFC500E63FA3 /* JMScanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMScanVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C655B63B1BF1AAE8002E8336 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C655B63F1BF1ABBF002E8336 /* GraphView.swift */,
+				C655B6391BF1AADE002E8336 /* EyeView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C655B63C1BF1AAF5002E8336 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C655B63D1BF1AAFC002E8336 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C67D060F1BF0AFC500E63FA3 /* JMScanVC.swift */,
+				C655B6341BF1867D002E8336 /* JMRealTimeDataVC.swift */,
+				C655B6361BF18738002E8336 /* JMStandardDataVC.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		C655B63E1BF1AB93002E8336 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C655B6411BF1ABF7002E8336 /* EyeMovement.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		C67D05EB1BF0AE5900E63FA3 = {
 			isa = PBXGroup;
 			children = (
@@ -74,8 +118,11 @@
 		C67D05F61BF0AE5900E63FA3 /* MEMESample */ = {
 			isa = PBXGroup;
 			children = (
+				C655B63E1BF1AB93002E8336 /* Common */,
+				C655B63C1BF1AAF5002E8336 /* Model */,
+				C655B63B1BF1AAE8002E8336 /* View */,
+				C655B63D1BF1AAFC002E8336 /* ViewController */,
 				C67D05F71BF0AE5900E63FA3 /* AppDelegate.swift */,
-				C67D060F1BF0AFC500E63FA3 /* MPScanViewController.swift */,
 				C67D060D1BF0AEF700E63FA3 /* Bridging-Header.h */,
 				C67D060E1BF0AF7300E63FA3 /* Key.h */,
 				C67D05FB1BF0AE5900E63FA3 /* Main.storyboard */,
@@ -163,8 +210,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C67D06101BF0AFC500E63FA3 /* MPScanViewController.swift in Sources */,
+				C655B6351BF1867D002E8336 /* JMRealTimeDataVC.swift in Sources */,
+				C67D06101BF0AFC500E63FA3 /* JMScanVC.swift in Sources */,
+				C655B6421BF1ABF7002E8336 /* EyeMovement.swift in Sources */,
+				C655B63A1BF1AADE002E8336 /* EyeView.swift in Sources */,
+				C655B6371BF18738002E8336 /* JMStandardDataVC.swift in Sources */,
 				C67D05F81BF0AE5900E63FA3 /* AppDelegate.swift in Sources */,
+				C655B6401BF1ABBF002E8336 /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
