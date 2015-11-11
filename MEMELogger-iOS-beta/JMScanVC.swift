@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class JMScanVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MEMELibDelegate {
     
@@ -57,6 +58,7 @@ class JMScanVC: UIViewController, UITableViewDelegate, UITableViewDataSource, ME
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         MEMELib.sharedInstance().connectPeripheral(_peripheralsFound[indexPath.row])
+        SVProgressHUD.showWithStatus("Connecting")
     }
 
     // MARK: - MEMELib delegate
@@ -69,6 +71,7 @@ class JMScanVC: UIViewController, UITableViewDelegate, UITableViewDataSource, ME
     
     func memePeripheralConnected(peripheral: CBPeripheral!) {
         NSLog("MEME Device Connected %@", peripheral.identifier.UUIDString)
+        SVProgressHUD.dismiss()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

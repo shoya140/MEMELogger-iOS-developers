@@ -235,6 +235,7 @@ class JMStandardDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     // MARK: - MEMELib delegate
     
     func memeStandardModeDataReceived(data: MEMEStandardData!) {
+        NSLog("%@", data.description)
         _lastData = data
         tableView.reloadData()
     }

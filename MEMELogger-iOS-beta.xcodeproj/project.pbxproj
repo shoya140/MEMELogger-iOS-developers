@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C63E64011BF34D6400D1234B /* JMStandardDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E64001BF34D6400D1234B /* JMStandardDataVC.swift */; };
 		C655B6351BF1867D002E8336 /* JMRealTimeDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C655B6341BF1867D002E8336 /* JMRealTimeDataVC.swift */; };
-		C655B6371BF18738002E8336 /* JMStandardDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C655B6361BF18738002E8336 /* JMStandardDataVC.swift */; };
 		C655B63A1BF1AADE002E8336 /* EyeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C655B6391BF1AADE002E8336 /* EyeView.swift */; };
 		C655B6401BF1ABBF002E8336 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C655B63F1BF1ABBF002E8336 /* GraphView.swift */; };
 		C655B6421BF1ABF7002E8336 /* EyeMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C655B6411BF1ABF7002E8336 /* EyeMovement.swift */; };
+		C669077F1BF49395004E7812 /* SIFlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669077E1BF49395004E7812 /* SIFlatButton.swift */; };
+		C66907811BF49523004E7812 /* JMRecordingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66907801BF49523004E7812 /* JMRecordingVC.swift */; };
+		C66907831BF4953E004E7812 /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66907821BF4953E004E7812 /* FileWriter.swift */; };
+		C66907851BF49580004E7812 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C66907841BF49580004E7812 /* SVProgressHUD.framework */; };
 		C67D05F81BF0AE5900E63FA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67D05F71BF0AE5900E63FA3 /* AppDelegate.swift */; };
 		C67D05FD1BF0AE5900E63FA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C67D05FB1BF0AE5900E63FA3 /* Main.storyboard */; };
 		C67D05FF1BF0AE5900E63FA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C67D05FE1BF0AE5900E63FA3 /* Assets.xcassets */; };
@@ -35,12 +39,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C63E64001BF34D6400D1234B /* JMStandardDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMStandardDataVC.swift; sourceTree = "<group>"; };
 		C655B6341BF1867D002E8336 /* JMRealTimeDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMRealTimeDataVC.swift; sourceTree = "<group>"; };
-		C655B6361BF18738002E8336 /* JMStandardDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMStandardDataVC.swift; sourceTree = "<group>"; };
 		C655B6391BF1AADE002E8336 /* EyeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeView.swift; sourceTree = "<group>"; };
 		C655B63F1BF1ABBF002E8336 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		C655B6411BF1ABF7002E8336 /* EyeMovement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeMovement.swift; sourceTree = "<group>"; };
-		C67D05F41BF0AE5900E63FA3 /* MEMESample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MEMESample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C669077E1BF49395004E7812 /* SIFlatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIFlatButton.swift; sourceTree = "<group>"; };
+		C66907801BF49523004E7812 /* JMRecordingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMRecordingVC.swift; sourceTree = "<group>"; };
+		C66907821BF4953E004E7812 /* FileWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
+		C66907841BF49580004E7812 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		C67D05F41BF0AE5900E63FA3 /* MEMELogger-iOS-beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MEMELogger-iOS-beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C67D05F71BF0AE5900E63FA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C67D05FC1BF0AE5900E63FA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C67D05FE1BF0AE5900E63FA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C66907851BF49580004E7812 /* SVProgressHUD.framework in Frameworks */,
 				C67D060A1BF0AE6E00E63FA3 /* MEMELib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +76,7 @@
 		C655B63B1BF1AAE8002E8336 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C669077E1BF49395004E7812 /* SIFlatButton.swift */,
 				C655B63F1BF1ABBF002E8336 /* GraphView.swift */,
 				C655B6391BF1AADE002E8336 /* EyeView.swift */,
 			);
@@ -76,6 +86,7 @@
 		C655B63C1BF1AAF5002E8336 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C66907821BF4953E004E7812 /* FileWriter.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -84,8 +95,9 @@
 			isa = PBXGroup;
 			children = (
 				C67D060F1BF0AFC500E63FA3 /* JMScanVC.swift */,
+				C63E64001BF34D6400D1234B /* JMStandardDataVC.swift */,
 				C655B6341BF1867D002E8336 /* JMRealTimeDataVC.swift */,
-				C655B6361BF18738002E8336 /* JMStandardDataVC.swift */,
+				C66907801BF49523004E7812 /* JMRecordingVC.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -101,8 +113,9 @@
 		C67D05EB1BF0AE5900E63FA3 = {
 			isa = PBXGroup;
 			children = (
+				C66907841BF49580004E7812 /* SVProgressHUD.framework */,
 				C67D06091BF0AE6E00E63FA3 /* MEMELib.framework */,
-				C67D05F61BF0AE5900E63FA3 /* MEMESample */,
+				C67D05F61BF0AE5900E63FA3 /* MEMELogger-iOS-beta */,
 				C67D05F51BF0AE5900E63FA3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,12 +123,12 @@
 		C67D05F51BF0AE5900E63FA3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C67D05F41BF0AE5900E63FA3 /* MEMESample.app */,
+				C67D05F41BF0AE5900E63FA3 /* MEMELogger-iOS-beta.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C67D05F61BF0AE5900E63FA3 /* MEMESample */ = {
+		C67D05F61BF0AE5900E63FA3 /* MEMELogger-iOS-beta */ = {
 			isa = PBXGroup;
 			children = (
 				C655B63E1BF1AB93002E8336 /* Common */,
@@ -130,28 +143,29 @@
 				C67D06001BF0AE5900E63FA3 /* LaunchScreen.storyboard */,
 				C67D06031BF0AE5900E63FA3 /* Info.plist */,
 			);
-			path = MEMESample;
+			path = "MEMELogger-iOS-beta";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C67D05F31BF0AE5900E63FA3 /* MEMESample */ = {
+		C67D05F31BF0AE5900E63FA3 /* MEMELogger-iOS-beta */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C67D06061BF0AE5900E63FA3 /* Build configuration list for PBXNativeTarget "MEMESample" */;
+			buildConfigurationList = C67D06061BF0AE5900E63FA3 /* Build configuration list for PBXNativeTarget "MEMELogger-iOS-beta" */;
 			buildPhases = (
 				C67D05F01BF0AE5900E63FA3 /* Sources */,
 				C67D05F11BF0AE5900E63FA3 /* Frameworks */,
 				C67D05F21BF0AE5900E63FA3 /* Resources */,
 				C67D060B1BF0AE7800E63FA3 /* CopyFiles */,
+				C66907861BF49587004E7812 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MEMESample;
+			name = "MEMELogger-iOS-beta";
 			productName = MEMESample;
-			productReference = C67D05F41BF0AE5900E63FA3 /* MEMESample.app */;
+			productReference = C67D05F41BF0AE5900E63FA3 /* MEMELogger-iOS-beta.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -174,7 +188,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C67D05EF1BF0AE5900E63FA3 /* Build configuration list for PBXProject "MEMESample" */;
+			buildConfigurationList = C67D05EF1BF0AE5900E63FA3 /* Build configuration list for PBXProject "MEMELogger-iOS-beta" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -187,7 +201,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C67D05F31BF0AE5900E63FA3 /* MEMESample */,
+				C67D05F31BF0AE5900E63FA3 /* MEMELogger-iOS-beta */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +219,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C66907861BF49587004E7812 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C67D05F01BF0AE5900E63FA3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -212,9 +243,12 @@
 			files = (
 				C655B6351BF1867D002E8336 /* JMRealTimeDataVC.swift in Sources */,
 				C67D06101BF0AFC500E63FA3 /* JMScanVC.swift in Sources */,
+				C63E64011BF34D6400D1234B /* JMStandardDataVC.swift in Sources */,
 				C655B6421BF1ABF7002E8336 /* EyeMovement.swift in Sources */,
+				C66907811BF49523004E7812 /* JMRecordingVC.swift in Sources */,
 				C655B63A1BF1AADE002E8336 /* EyeView.swift in Sources */,
-				C655B6371BF18738002E8336 /* JMStandardDataVC.swift in Sources */,
+				C669077F1BF49395004E7812 /* SIFlatButton.swift in Sources */,
+				C66907831BF4953E004E7812 /* FileWriter.swift in Sources */,
 				C67D05F81BF0AE5900E63FA3 /* AppDelegate.swift in Sources */,
 				C655B6401BF1ABBF002E8336 /* GraphView.swift in Sources */,
 			);
@@ -331,11 +365,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = MEMESample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MEMELogger-iOS-beta/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = shoya140.MEMESample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "shoya140.MEMELogger-iOS-beta";
+				PRODUCT_NAME = "MEMELogger-iOS-beta";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/Bridging-Header.h";
 			};
 			name = Debug;
@@ -348,11 +383,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = MEMESample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MEMELogger-iOS-beta/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = shoya140.MEMESample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "shoya140.MEMELogger-iOS-beta";
+				PRODUCT_NAME = "MEMELogger-iOS-beta";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/Bridging-Header.h";
 			};
 			name = Release;
@@ -360,7 +396,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C67D05EF1BF0AE5900E63FA3 /* Build configuration list for PBXProject "MEMESample" */ = {
+		C67D05EF1BF0AE5900E63FA3 /* Build configuration list for PBXProject "MEMELogger-iOS-beta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C67D06041BF0AE5900E63FA3 /* Debug */,
@@ -369,7 +405,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C67D06061BF0AE5900E63FA3 /* Build configuration list for PBXNativeTarget "MEMESample" */ = {
+		C67D06061BF0AE5900E63FA3 /* Build configuration list for PBXNativeTarget "MEMELogger-iOS-beta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C67D06071BF0AE5900E63FA3 /* Debug */,
