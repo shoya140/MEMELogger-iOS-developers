@@ -15,5 +15,7 @@
 - (uint64_t) getUnixTime: (UInt8 *) data;
 - (UInt16) getUInt16: (UInt8 *)data;
 - (SInt16) getSInt16: (UInt8 *)data;
+- (float) getFloat16: (UInt8 *)data;
+- (float) getFloat24: (UInt8 *)data;
 
 @end

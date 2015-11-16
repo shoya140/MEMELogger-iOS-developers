@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "MEMEData.h"
 
 @interface MEMERealTimeData : MEMEData
@@ -28,8 +29,8 @@
 @property float pitch;
 @property float yaw;
 
-@property signed char accX;
-@property signed char accY;
-@property signed char accZ;
+@property SInt8 accX;
+@property SInt8 accY;
+@property SInt8 accZ;
 
 @end
