@@ -1,5 +1,5 @@
 //
-//  JMScanVC.swift
+//  JMParingVC.swift
 //  MEMESample
 //
 //  Created by Shoya Ishimaru on 2015/11/09.
@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class JMScanVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MEMELibDelegate {
+class JMPairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MEMELibDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
