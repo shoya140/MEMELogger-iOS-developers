@@ -40,7 +40,7 @@ class JMRecordingVC: UIViewController, MEMELibDelegate{
             self.recordSwitchButton.setTitle("Stop Recording", forState: UIControlState.Normal)
             self.recordSwitchButton.inverse = true
             self.segmentSwitch.selectedSegmentIndex = 0
-            SVProgressHUD.showSuccessWithStatus("Started")
+            SVProgressHUD.showImage(UIImage(named: "icon-recording"), status: "Started")
         }
     }
     
