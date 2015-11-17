@@ -13,7 +13,7 @@ class JMRecordingVC: UIViewController, MEMELibDelegate{
 
     @IBOutlet weak var recordSwitchButton: SIFlatButton!
     @IBOutlet weak var lastTimestampLabel: UILabel!
-    @IBOutlet weak var segmentationLabelSwitch: UISegmentedControl!
+    @IBOutlet weak var segmentSwitch: UISegmentedControl!
     
     private var label:Int = 0
     
@@ -39,20 +39,24 @@ class JMRecordingVC: UIViewController, MEMELibDelegate{
             FileWriter.sharedWriter.startRecording()
             self.recordSwitchButton.setTitle("Stop Recording", forState: UIControlState.Normal)
             self.recordSwitchButton.inverse = true
-            SVProgressHUD.showSuccessWithStatus("Started")
+            self.segmentSwitch.selectedSegmentIndex = 0
+            SVProgressHUD.showImage(UIImage(named: "icon-recording"), status: "Started")
         }
     }
     
-    @IBAction func eventLavelButtonTapped(sender: AnyObject) {
-        label = 1
+    @IBAction func eventLavelButtonTapped(sender: UIButton) {
+        FileWriter.sharedWriter.eventLabel = 1
+    }
+    
+    @IBAction func segmentLabelChanged(sender: UISegmentedControl) {
+        FileWriter.sharedWriter.segmentLabel = sender.selectedSegmentIndex
     }
     
     // MARK: - MEMELib delegate
     
     func memeRealTimeModeDataReceived(data: MEMERealTimeData!) {
         if FileWriter.sharedWriter.isRecording{
-            FileWriter.sharedWriter.writeData(data, eventLabel: label, segmentLabel: self.segmentationLabelSwitch.selectedSegmentIndex)
-            label = 0
+            FileWriter.sharedWriter.writeData(data)
             lastTimestampLabel.text = NSString(format: "Last timestamp: %10.5f", NSDate().timeIntervalSince1970 ) as String
         }
     }

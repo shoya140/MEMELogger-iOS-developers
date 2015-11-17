@@ -116,7 +116,7 @@
 				C6174BD31BFBA7250086F19F /* Key.h */,
 				C662D2941BFBB0AB00239761 /* MEMELib.framework */,
 				C66907841BF49580004E7812 /* SVProgressHUD.framework */,
-				C67D05F61BF0AE5900E63FA3 /* MEMELogger-iOS-beta */,
+				C67D05F61BF0AE5900E63FA3 /* MEMELogger-iOS-developers */,
 				C67D05F51BF0AE5900E63FA3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,7 +129,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C67D05F61BF0AE5900E63FA3 /* MEMELogger-iOS-beta */ = {
+		C67D05F61BF0AE5900E63FA3 /* MEMELogger-iOS-developers */ = {
 			isa = PBXGroup;
 			children = (
 				C655B63E1BF1AB93002E8336 /* Common */,
@@ -143,7 +143,6 @@
 				C67D06001BF0AE5900E63FA3 /* LaunchScreen.storyboard */,
 				C67D06031BF0AE5900E63FA3 /* Info.plist */,
 			);
-			name = "MEMELogger-iOS-beta";
 			path = "MEMELogger-iOS-developers";
 			sourceTree = "<group>";
 		};

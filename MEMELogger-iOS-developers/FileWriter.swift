@@ -12,6 +12,8 @@ class FileWriter: NSObject {
     
     static let sharedWriter = FileWriter()
     var isRecording = false
+    var eventLabel:Int = 0
+    var segmentLabel:Int = 0
     
     private var fileHandle: NSFileHandle?
     
@@ -29,7 +31,7 @@ class FileWriter: NSObject {
     }
     
     func startRecording() {
-        isRecording = true
+        self.isRecording = true
         
         // create file prefix
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last!
@@ -50,11 +52,11 @@ class FileWriter: NSObject {
     func stopRecording() {
         fileHandle?.closeFile()
         fileHandle = nil
-        isRecording = false
+        self.isRecording = false
     }
     
-    func writeData(data: MEMERealTimeData, eventLabel: Int, segmentLabel: Int) {
-        if !isRecording {
+    func writeData(data: MEMERealTimeData) {
+        if !self.isRecording {
             return
         }
         
@@ -82,14 +84,15 @@ class FileWriter: NSObject {
                 data.isWalking,
                 data.fitError,
                 data.powerLeft,
-                eventLabel,
-                segmentLabel,
+                self.eventLabel,
+                self.segmentLabel,
                 applicationState
             )
             if let d = text.dataUsingEncoding(NSUTF8StringEncoding) {
                 handle.writeData(d)
             }
         }
+        self.eventLabel = 0
     }
     
 }
