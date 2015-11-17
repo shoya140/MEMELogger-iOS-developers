@@ -5,7 +5,7 @@ Sensor logging application on **J!NS MEME for Developers**
 
 If your device is MEME Beta (pre-released version), please use [version/meme-beta](https://github.com/shoya140/MEMELogger-iOS-developers/tree/version/meme-beta) branch.
 
-<img src="https://dl.dropboxusercontent.com/u/12208857/img/github_memelogger_ios_dev_01.png" width=30%>
+<img src="https://dl.dropboxusercontent.com/u/12208857/img/github_memelogger_ios_dev_01.png" width=80%>
 
 ## Requirements
 
