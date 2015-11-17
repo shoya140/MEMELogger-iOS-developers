@@ -1,16 +1,16 @@
 MEMELogger-iOS-developers
 =============
 
-Sensor logging application on **J!NS MEME for Developers**
+Sensor logging application on **J!NS MEME Beta**
 
-If your device is MEME Beta (pre-released version), please use [version/meme-beta](https://github.com/shoya140/MEMELogger-iOS-developers/tree/version/meme-beta) branch.
+If your device is MEME for Developers Beta (released version), please use [master](https://github.com/shoya140/MEMELogger-iOS-developers) branch.
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/github_memelogger_ios_dev_01.png" width=80%>
 
 ## Requirements
 
 - iOS 8.0+
-- J!NS MEME for Developer
+- J!NS MEME Beta
 
 ## Setup
 

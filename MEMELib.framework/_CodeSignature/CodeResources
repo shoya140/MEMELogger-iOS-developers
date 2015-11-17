@@ -6,42 +6,58 @@
 	<dict>
 		<key>Headers/MEMEData.h</key>
 		<data>
-		aNCiwj8BbWCV8y9HI1Fu7gF+5P0=
+		PUPMcj91SVOOqzdLt2iqdWG9eQQ=
 		</data>
 		<key>Headers/MEMELib.h</key>
 		<data>
-		5GNy5GAK+1abkAKU7t/jbgP+NYs=
+		ZL5ocB2qPpoH+HCWWFpd9PLkVDk=
 		</data>
 		<key>Headers/MEMERealTimeData.h</key>
 		<data>
-		uLYedCbtMhpfp+d4wRxxs2wq82o=
+		SwHQT18ApUpsOFw4/CXTdxVYYBA=
+		</data>
+		<key>Headers/MEMEStandardData.h</key>
+		<data>
+		8a5QwW6kLdgzuNMNhAVX6Lza8yY=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		iNBhlh94ZG/xFvybu8sF7rt2aJY=
+		rspsE5HtJP+ImJ5hChsGn858yto=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		+AkSWs/8GWT9icP4nly04T+KDPg=
+		</data>
+		<key>forest.dat</key>
+		<data>
+		F6Ei4E1S4aURcueyQHKBaEyVy5Y=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>Headers/MEMEData.h</key>
 		<data>
-		aNCiwj8BbWCV8y9HI1Fu7gF+5P0=
+		PUPMcj91SVOOqzdLt2iqdWG9eQQ=
 		</data>
 		<key>Headers/MEMELib.h</key>
 		<data>
-		5GNy5GAK+1abkAKU7t/jbgP+NYs=
+		ZL5ocB2qPpoH+HCWWFpd9PLkVDk=
 		</data>
 		<key>Headers/MEMERealTimeData.h</key>
 		<data>
-		uLYedCbtMhpfp+d4wRxxs2wq82o=
+		SwHQT18ApUpsOFw4/CXTdxVYYBA=
+		</data>
+		<key>Headers/MEMEStandardData.h</key>
+		<data>
+		8a5QwW6kLdgzuNMNhAVX6Lza8yY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		+AkSWs/8GWT9icP4nly04T+KDPg=
+		</data>
+		<key>forest.dat</key>
+		<data>
+		F6Ei4E1S4aURcueyQHKBaEyVy5Y=
 		</data>
 	</dict>
 	<key>rules</key>

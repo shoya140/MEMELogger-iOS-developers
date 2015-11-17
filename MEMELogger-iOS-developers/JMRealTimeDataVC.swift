@@ -38,6 +38,7 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewWillAppear(animated)
         
         MEMELib.sharedInstance().delegate = self
+        MEMELib.sharedInstance().changeDataMode(MEME_COM_REALTIME)
     }
 
     // MARK: - Table view data source
