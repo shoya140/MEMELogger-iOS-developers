@@ -270,8 +270,11 @@
                                     <segment title="2"/>
                                     <segment title="3"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentLabelChanged:" destination="gak-FG-1NI" eventType="valueChanged" id="8iF-xA-nBU"/>
+                                </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Segmentation Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EiJ-Ls-4Ab">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Segment Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EiJ-Ls-4Ab">
                                 <rect key="frame" x="20" y="413" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="aYc-7S-gCf"/>
@@ -309,7 +312,7 @@
                     <connections>
                         <outlet property="lastTimestampLabel" destination="CHE-2g-cEu" id="K5t-mw-lrt"/>
                         <outlet property="recordSwitchButton" destination="ebe-Kt-et3" id="phV-mW-ocG"/>
-                        <outlet property="segmentationLabelSwitch" destination="D0b-0i-Lys" id="B22-qR-CV0"/>
+                        <outlet property="segmentSwitch" destination="D0b-0i-Lys" id="OeF-9J-Od0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Qq-Fv-pRx" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -226,6 +226,10 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     // MARK: - MEMELib delegate
     
     func memeRealTimeModeDataReceived(data: MEMERealTimeData!) {
+        if FileWriter.sharedWriter.isRecording{
+            FileWriter.sharedWriter.writeData(data)
+        }
+        
         _blinkStrengths.append(Double(data.blinkStrength))
         if _blinkStrengths.count > Int(self._numberOfValuesToBeDisplayed) {
             _blinkStrengths.removeRange(Range<Int>(
