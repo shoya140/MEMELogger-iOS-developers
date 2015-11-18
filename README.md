@@ -14,19 +14,12 @@ If your device is MEME Beta (pre-released version), please use [version/meme-bet
 
 ## Setup
 
-### 1.Carthage update
-
-```
-$ brew install carthage  # if necessary
-$ carthage update
-```
-
-### 2.Create ```Key.h``` in the project
+### 1.Create ```Key.h``` in the project
 
 ```
 $ cp Key.h.org Key.h
 ```
 
-### 3.Write your MEME_APP_ID and MEME_APP_SECRET in ```Key.h```.
+### 2.Write your MEME_APP_ID and MEME_APP_SECRET in ```Key.h```.
 
 <img src="https://dl.dropboxusercontent.com/u/12208857/img/github_memelogger_ios_dev_02.png" width=80%>

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C632594B1BFC2B1000197D19 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = C63259441BFC2B1000197D19 /* SVIndefiniteAnimatedView.m */; };
+		C632594C1BFC2B1000197D19 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C63259461BFC2B1000197D19 /* SVProgressHUD.bundle */; };
+		C632594D1BFC2B1000197D19 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C63259481BFC2B1000197D19 /* SVProgressHUD.m */; };
+		C632594E1BFC2B1000197D19 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C632594A1BFC2B1000197D19 /* SVRadialGradientLayer.m */; };
 		C655B6351BF1867D002E8336 /* JMRealTimeDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C655B6341BF1867D002E8336 /* JMRealTimeDataVC.swift */; };
 		C655B63A1BF1AADE002E8336 /* EyeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C655B6391BF1AADE002E8336 /* EyeView.swift */; };
 		C655B6401BF1ABBF002E8336 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C655B63F1BF1ABBF002E8336 /* GraphView.swift */; };
@@ -14,7 +18,6 @@
 		C669077F1BF49395004E7812 /* SIFlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669077E1BF49395004E7812 /* SIFlatButton.swift */; };
 		C66907811BF49523004E7812 /* JMRecordingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66907801BF49523004E7812 /* JMRecordingVC.swift */; };
 		C66907831BF4953E004E7812 /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66907821BF4953E004E7812 /* FileWriter.swift */; };
-		C66907851BF49580004E7812 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C66907841BF49580004E7812 /* SVProgressHUD.framework */; };
 		C67D05F81BF0AE5900E63FA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67D05F71BF0AE5900E63FA3 /* AppDelegate.swift */; };
 		C67D05FD1BF0AE5900E63FA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C67D05FB1BF0AE5900E63FA3 /* Main.storyboard */; };
 		C67D05FF1BF0AE5900E63FA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C67D05FE1BF0AE5900E63FA3 /* Assets.xcassets */; };
@@ -39,6 +42,14 @@
 
 /* Begin PBXFileReference section */
 		C6174BD31BFBA7250086F19F /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
+		C63259431BFC2B1000197D19 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		C63259441BFC2B1000197D19 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		C63259451BFC2B1000197D19 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		C63259461BFC2B1000197D19 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		C63259471BFC2B1000197D19 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		C63259481BFC2B1000197D19 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		C63259491BFC2B1000197D19 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		C632594A1BFC2B1000197D19 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		C655B6341BF1867D002E8336 /* JMRealTimeDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMRealTimeDataVC.swift; sourceTree = "<group>"; };
 		C655B6391BF1AADE002E8336 /* EyeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeView.swift; sourceTree = "<group>"; };
 		C655B63F1BF1ABBF002E8336 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
@@ -46,7 +57,6 @@
 		C669077E1BF49395004E7812 /* SIFlatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIFlatButton.swift; sourceTree = "<group>"; };
 		C66907801BF49523004E7812 /* JMRecordingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMRecordingVC.swift; sourceTree = "<group>"; };
 		C66907821BF4953E004E7812 /* FileWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
-		C66907841BF49580004E7812 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		C67D05F41BF0AE5900E63FA3 /* MEMELogger-iOS-developers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MEMELogger-iOS-developers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C67D05F71BF0AE5900E63FA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C67D05FC1BF0AE5900E63FA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,13 +74,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				C69F148F1BF9AE9300BF823D /* MEMELib.framework in Frameworks */,
-				C66907851BF49580004E7812 /* SVProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C63259421BFC2B1000197D19 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C63259431BFC2B1000197D19 /* SVIndefiniteAnimatedView.h */,
+				C63259441BFC2B1000197D19 /* SVIndefiniteAnimatedView.m */,
+				C63259451BFC2B1000197D19 /* SVProgressHUD-Prefix.pch */,
+				C63259461BFC2B1000197D19 /* SVProgressHUD.bundle */,
+				C63259471BFC2B1000197D19 /* SVProgressHUD.h */,
+				C63259481BFC2B1000197D19 /* SVProgressHUD.m */,
+				C63259491BFC2B1000197D19 /* SVRadialGradientLayer.h */,
+				C632594A1BFC2B1000197D19 /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		C655B63B1BF1AAE8002E8336 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,8 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				C6174BD31BFBA7250086F19F /* Key.h */,
+				C63259421BFC2B1000197D19 /* SVProgressHUD */,
 				C69F148E1BF9AE9300BF823D /* MEMELib.framework */,
-				C66907841BF49580004E7812 /* SVProgressHUD.framework */,
 				C67D05F61BF0AE5900E63FA3 /* MEMELogger-iOS-developers */,
 				C67D05F51BF0AE5900E63FA3 /* Products */,
 			);
@@ -154,7 +178,6 @@
 				C67D05F11BF0AE5900E63FA3 /* Frameworks */,
 				C67D05F21BF0AE5900E63FA3 /* Resources */,
 				C67D060B1BF0AE7800E63FA3 /* CopyFiles */,
-				C66907861BF49587004E7812 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -211,27 +234,11 @@
 				C67D06021BF0AE5900E63FA3 /* LaunchScreen.storyboard in Resources */,
 				C67D05FF1BF0AE5900E63FA3 /* Assets.xcassets in Resources */,
 				C67D05FD1BF0AE5900E63FA3 /* Main.storyboard in Resources */,
+				C632594C1BFC2B1000197D19 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		C66907861BF49587004E7812 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C67D05F01BF0AE5900E63FA3 /* Sources */ = {
@@ -243,9 +250,12 @@
 				C655B6421BF1ABF7002E8336 /* EyeMovement.swift in Sources */,
 				C66907811BF49523004E7812 /* JMRecordingVC.swift in Sources */,
 				C655B63A1BF1AADE002E8336 /* EyeView.swift in Sources */,
+				C632594B1BFC2B1000197D19 /* SVIndefiniteAnimatedView.m in Sources */,
 				C669077F1BF49395004E7812 /* SIFlatButton.swift in Sources */,
+				C632594E1BFC2B1000197D19 /* SVRadialGradientLayer.m in Sources */,
 				C66907831BF4953E004E7812 /* FileWriter.swift in Sources */,
 				C67D05F81BF0AE5900E63FA3 /* AppDelegate.swift in Sources */,
+				C632594D1BFC2B1000197D19 /* SVProgressHUD.m in Sources */,
 				C655B6401BF1ABBF002E8336 /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

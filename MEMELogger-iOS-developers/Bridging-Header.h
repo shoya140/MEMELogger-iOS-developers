@@ -11,5 +11,6 @@
 
 #import "Key.h"
 #import <MEMELib/MEMELib.h>
+#import "SVProgressHUD.h"
 
 #endif /* Bridging_Header_h */

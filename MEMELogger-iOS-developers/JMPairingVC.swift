@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 class JMPairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource, MEMELibDelegate {
     
