@@ -26,7 +26,7 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     private var _isWalkings: [Double] = [0.0]
     private var _fitErrors: [Double] = [0.0]
     private var _powerLefts: [Double] = [0.0]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +40,7 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         MEMELib.sharedInstance().delegate = self
         MEMELib.sharedInstance().changeDataMode(MEME_COM_REALTIME)
     }
-
+    
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -50,9 +50,9 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 1
+            return 3
         case 1:
-            return 4
+            return 2
         case 2:
             return 7
         case 3:
@@ -64,7 +64,7 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.section == 0 {
+        if indexPath.section == 0 && indexPath.row == 0 {
             return 100
         } else {
             return 160
@@ -89,18 +89,18 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCellWithIdentifier("EyeCell", forIndexPath: indexPath)
-            let eyeView = (cell.viewWithTag(1) as! EyeView)
-            if _blinkStrengths.last! > 0 {
-                eyeView.eyeOpened = false
-            } else {
-                eyeView.eyeOpened = true
-            }
-            eyeView.setNeedsDisplay()
-            return cell
-        case 1:
             switch indexPath.row {
             case 0:
+                let cell = tableView.dequeueReusableCellWithIdentifier("EyeCell", forIndexPath: indexPath)
+                let eyeView = (cell.viewWithTag(1) as! EyeView)
+                if _blinkStrengths.last! > 0 {
+                    eyeView.eyeOpened = false
+                } else {
+                    eyeView.eyeOpened = true
+                }
+                eyeView.setNeedsDisplay()
+                return cell
+            case 1:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Blink Strength"
                 (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _blinkStrengths.last!)
@@ -108,7 +108,7 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
                 (cell.viewWithTag(3) as! GraphView).minimumValue = 0
                 (cell.viewWithTag(3) as! GraphView).values = _blinkStrengths
                 return cell
-            case 1:
+            case 2:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Blink Speed"
                 (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _blinkSpeeds.last!)
@@ -116,7 +116,12 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
                 (cell.viewWithTag(3) as! GraphView).minimumValue = 0
                 (cell.viewWithTag(3) as! GraphView).values = _blinkSpeeds
                 return cell
-            case 2:
+            default:
+                break
+            }
+        case 1:
+            switch indexPath.row {
+            case 0:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Vertical Eye Movement"
                 (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _verticalEyeMovements.last!)
@@ -124,7 +129,7 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
                 (cell.viewWithTag(3) as! GraphView).minimumValue = -3
                 (cell.viewWithTag(3) as! GraphView).values = _verticalEyeMovements
                 return cell
-            case 3:
+            case 1:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Horizonal Eye Movement"
                 (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _horizontalEyeMovements.last!)
@@ -163,7 +168,7 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
                 return cell
             case 3:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "Gyro Roll"
+                (cell.viewWithTag(1) as! UILabel).text = "Rotation Roll"
                 (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _gyroRValues.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 90
                 (cell.viewWithTag(3) as! GraphView).minimumValue = -90
@@ -171,7 +176,7 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
                 return cell
             case 4:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "Gyro Pitch"
+                (cell.viewWithTag(1) as! UILabel).text = "Rotation Pitch"
                 (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _gyroPValues.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 180
                 (cell.viewWithTag(3) as! GraphView).minimumValue = -180
@@ -179,7 +184,7 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
                 return cell
             case 5:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "Gyro Yaw"
+                (cell.viewWithTag(1) as! UILabel).text = "Rotation Yaw"
                 (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _gyroYValues.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 360
                 (cell.viewWithTag(3) as! GraphView).minimumValue = 0
@@ -302,7 +307,7 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
                 end: _gyroPValues.count - Int(_numberOfValuesToBeDisplayed)
                 ))
         }
-            
+        
         _gyroYValues.append(Double(data.yaw))
         if _gyroYValues.count > Int(self._numberOfValuesToBeDisplayed) {
             _gyroYValues.removeRange(Range<Int>(
