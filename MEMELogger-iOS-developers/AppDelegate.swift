@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         MEMELib.setAppClientId(MEME_APP_ID, clientSecret: MEME_APP_SECRET)
+        
+        Parse.enableLocalDatastore()
+        Parse.setApplicationId(PARSE_APPLICATION_ID, clientKey: PARSE_CLIENT_KEY)
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        let ud = NSUserDefaults.standardUserDefaults()
+        ud.registerDefaults(["last_saved_file_name":"2015-08-02_06-14-21_+0000_eog.csv"])
+        ud.registerDefaults(["MEME_UUID":"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"])
+        
         return true
     }
 

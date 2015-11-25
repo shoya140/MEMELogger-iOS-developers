@@ -52,12 +52,16 @@ class JMRecordingVC: UIViewController, MEMELibDelegate{
         FileWriter.sharedWriter.segmentLabel = sender.selectedSegmentIndex
     }
     
+    @IBAction func uploadData(sender: UIButton) {
+        FileUploader().uploadFiles()
+    }
+    
     // MARK: - MEMELib delegate
     
     func memeRealTimeModeDataReceived(data: MEMERealTimeData!) {
         if FileWriter.sharedWriter.isRecording{
             FileWriter.sharedWriter.writeData(data)
-            lastTimestampLabel.text = NSString(format: "Last timestamp: %10.5f", NSDate().timeIntervalSince1970 ) as String
+            lastTimestampLabel.text = NSString(format: "%10.5f", NSDate().timeIntervalSince1970 ) as String
         }
     }
 }

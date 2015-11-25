@@ -1,2 +1,2 @@
 github "TransitApp/SVProgressHUD"
-
+github "OAuthSwift/OAuthSwift" ~> 0.4.6

@@ -23,6 +23,7 @@ class JMPairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
         tableView.delegate = self
 
         MEMELib.sharedInstance().delegate = self
+        MEMELib.sharedInstance().disconnectPeripheral()
         checkMEMEStatus(MEMELib.sharedInstance().startScanningPeripherals())
     }
     
@@ -86,6 +87,8 @@ class JMPairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
     
     func memePeripheralConnected(peripheral: CBPeripheral!) {
         NSLog("MEME Device Connected %@", peripheral.identifier.UUIDString)
+        let ud = NSUserDefaults.standardUserDefaults()
+        ud.setObject(peripheral.identifier.UUIDString, forKey: "MEME_UUID")
         MEMELib.sharedInstance().startDataReport()
         
         SVProgressHUD.dismiss()
