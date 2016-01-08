@@ -33,18 +33,24 @@ class JMPairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
     // MARK: - Utility
     
     func checkMEMEStatus(status: MEMEStatus) {
+        var memeAlert: UIAlertController? = nil
         if status == MEME_ERROR_APP_AUTH {
-            UIAlertView(title: "App Auth Failed", message: "Invalid Application ID or Client Secret", delegate: nil, cancelButtonTitle: "OK").show()
+            memeAlert = UIAlertController(title: "App Auth Failed", message: "Invalid Application ID or Client Secret", preferredStyle: .Alert)
         } else if status == MEME_ERROR_SDK_AUTH {
-            UIAlertView(title: "SDK Auth Failed", message: "Invalid SDK. Please update to the latest SDK.", delegate: nil, cancelButtonTitle: "OK").show()
+            memeAlert = UIAlertController(title: "SDK Auth Failed", message: "Invalid SDK. Please update to the latest SDK.", preferredStyle: .Alert)
         } else if status == MEME_ERROR_SDK_AUTH {
-            UIAlertView(title: "SDK_ERROR", message: "Invalid Command", delegate: nil, cancelButtonTitle: "OK").show()
+            memeAlert = UIAlertController(title: "SDK_ERROR", message: "Invalid Command", preferredStyle: .Alert)
         } else if status == MEME_ERROR_SDK_AUTH {
-            UIAlertView(title: "Error", message: "Bluetooth is off.", delegate: nil, cancelButtonTitle: "OK").show()
+            memeAlert = UIAlertController(title: "Error", message: "Bluetooth is off.", preferredStyle: .Alert)
+        }
+        
+        if let alert = memeAlert {
+            presentViewController(alert, animated: true, completion: nil)
         } else {
             print("Status: MEME_OK")
         }
     }
+    
 
     // MARK: - Table view data source
     
