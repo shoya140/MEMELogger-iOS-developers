@@ -42,7 +42,7 @@ class JMPairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
         } else if status == MEME_ERROR_SDK_AUTH {
             UIAlertView(title: "Error", message: "Bluetooth is off.", delegate: nil, cancelButtonTitle: "OK").show()
         } else {
-            NSLog("Status: MEME_OK")
+            print("Status: MEME_OK")
         }
     }
 
@@ -72,20 +72,20 @@ class JMPairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
     // MARK: - MEMELib delegate
     
     func memePeripheralFound(peripheral: CBPeripheral!, withDeviceAddress address: String!) {
-        NSLog("found")
+        print("found")
         for p in _peripheralsFound {
             if p.identifier.isEqual(peripheral.identifier){
                 return
             }
         }
         
-        NSLog("MEME Peripheral Found %@", peripheral.identifier.UUIDString)
+        print("MEME Peripheral Found %@", peripheral.identifier.UUIDString)
         _peripheralsFound.append(peripheral)
         tableView.reloadData()
     }
     
     func memePeripheralConnected(peripheral: CBPeripheral!) {
-        NSLog("MEME Device Connected %@", peripheral.identifier.UUIDString)
+        print("MEME Device Connected %@", peripheral.identifier.UUIDString)
         MEMELib.sharedInstance().startDataReport()
         
         SVProgressHUD.dismiss()
@@ -93,7 +93,7 @@ class JMPairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
     }
     
     func memePeripheralDisconnected(peripheral: CBPeripheral!) {
-        NSLog("MEME Device Disconnected")
+        print("MEME Device Disconnected")
     }
     
     func memeAppAuthorized(status: MEMEStatus) {
@@ -101,12 +101,12 @@ class JMPairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
     }
     
     func memeCommandResponse(response: MEMEResponse) {
-        NSLog("Command Response - eventCode: 0x%02x - commandResult: %d", response.eventCode, response.commandResult.boolValue);
+        print("Command Response - eventCode: 0x%02x - commandResult: %d", response.eventCode, response.commandResult.boolValue);
         switch response.eventCode {
         case 0x02:
-            NSLog("Data Report Started")
+            print("Data Report Started")
         case 0x04:
-            NSLog("Data Report Stopped");
+            print("Data Report Stopped");
         default:
             break
         }
