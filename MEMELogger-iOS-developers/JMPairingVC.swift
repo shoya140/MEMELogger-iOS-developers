@@ -1,5 +1,5 @@
 //
-//  JMParingVC.swift
+//  JMPairingVC.swift
 //  MEMESample
 //
 //  Created by Shoya Ishimaru on 2015/11/09.
