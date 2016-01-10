@@ -232,7 +232,7 @@
                                     <constraint firstAttribute="height" constant="80" id="QyJ-XM-mU3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Sart Recording">
+                                <state key="normal" title="Start Recording">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
