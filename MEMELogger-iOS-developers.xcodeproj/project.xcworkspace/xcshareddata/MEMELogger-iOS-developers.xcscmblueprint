@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5528CFD1BB022809D2509B3FAFA4582A93324513",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5528CFD1BB022809D2509B3FAFA4582A93324513" : 0,
+    "332CC6113CD2FD57C9CDC465D848326FAF4999CB" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FD58238E-E909-47CE-B5DE-36CE2644F5FF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5528CFD1BB022809D2509B3FAFA4582A93324513" : "MEMELogger-iOS-developers\/",
+    "332CC6113CD2FD57C9CDC465D848326FAF4999CB" : "rll\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MEMELogger-iOS-developers",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MEMELogger-iOS-developers.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:shoya140\/ReadingLifeLog.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "332CC6113CD2FD57C9CDC465D848326FAF4999CB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:shoya140\/MEMELogger-iOS-developers.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5528CFD1BB022809D2509B3FAFA4582A93324513"
+    }
+  ]
+}

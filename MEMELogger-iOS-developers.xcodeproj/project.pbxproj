@@ -11,6 +11,8 @@
 		C632594C1BFC2B1000197D19 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C63259461BFC2B1000197D19 /* SVProgressHUD.bundle */; };
 		C632594D1BFC2B1000197D19 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C63259481BFC2B1000197D19 /* SVProgressHUD.m */; };
 		C632594E1BFC2B1000197D19 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C632594A1BFC2B1000197D19 /* SVRadialGradientLayer.m */; };
+		C64AAEFF1C427CF50047D9BF /* MEMELib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64AAEFE1C427CF50047D9BF /* MEMELib.framework */; };
+		C64AAF011C427D100047D9BF /* MEMELib.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C64AAEFE1C427CF50047D9BF /* MEMELib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C655B6351BF1867D002E8336 /* JMRealTimeDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C655B6341BF1867D002E8336 /* JMRealTimeDataVC.swift */; };
 		C655B63A1BF1AADE002E8336 /* EyeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C655B6391BF1AADE002E8336 /* EyeView.swift */; };
 		C655B6401BF1ABBF002E8336 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C655B63F1BF1ABBF002E8336 /* GraphView.swift */; };
@@ -23,18 +25,16 @@
 		C67D05FF1BF0AE5900E63FA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C67D05FE1BF0AE5900E63FA3 /* Assets.xcassets */; };
 		C67D06021BF0AE5900E63FA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C67D06001BF0AE5900E63FA3 /* LaunchScreen.storyboard */; };
 		C67D06101BF0AFC500E63FA3 /* JMPairingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67D060F1BF0AFC500E63FA3 /* JMPairingVC.swift */; };
-		C69F148F1BF9AE9300BF823D /* MEMELib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69F148E1BF9AE9300BF823D /* MEMELib.framework */; };
-		C69F14901BF9AEA900BF823D /* MEMELib.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C69F148E1BF9AE9300BF823D /* MEMELib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C67D060B1BF0AE7800E63FA3 /* CopyFiles */ = {
+		C64AAF001C427D040047D9BF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C69F14901BF9AEA900BF823D /* MEMELib.framework in CopyFiles */,
+				C64AAF011C427D100047D9BF /* MEMELib.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +50,7 @@
 		C63259481BFC2B1000197D19 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		C63259491BFC2B1000197D19 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		C632594A1BFC2B1000197D19 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		C64AAEFE1C427CF50047D9BF /* MEMELib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MEMELib.framework; sourceTree = "<group>"; };
 		C655B6341BF1867D002E8336 /* JMRealTimeDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMRealTimeDataVC.swift; sourceTree = "<group>"; };
 		C655B6391BF1AADE002E8336 /* EyeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeView.swift; sourceTree = "<group>"; };
 		C655B63F1BF1ABBF002E8336 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		C67D06031BF0AE5900E63FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C67D060D1BF0AEF700E63FA3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		C67D060F1BF0AFC500E63FA3 /* JMPairingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMPairingVC.swift; sourceTree = "<group>"; };
-		C69F148E1BF9AE9300BF823D /* MEMELib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MEMELib.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C69F148F1BF9AE9300BF823D /* MEMELib.framework in Frameworks */,
+				C64AAEFF1C427CF50047D9BF /* MEMELib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				C6174BD31BFBA7250086F19F /* Key.h */,
+				C64AAEFE1C427CF50047D9BF /* MEMELib.framework */,
 				C63259421BFC2B1000197D19 /* SVProgressHUD */,
-				C69F148E1BF9AE9300BF823D /* MEMELib.framework */,
 				C67D05F61BF0AE5900E63FA3 /* MEMELogger-iOS-developers */,
 				C67D05F51BF0AE5900E63FA3 /* Products */,
 			);
@@ -177,7 +177,7 @@
 				C67D05F01BF0AE5900E63FA3 /* Sources */,
 				C67D05F11BF0AE5900E63FA3 /* Frameworks */,
 				C67D05F21BF0AE5900E63FA3 /* Resources */,
-				C67D060B1BF0AE7800E63FA3 /* CopyFiles */,
+				C64AAF001C427D040047D9BF /* CopyFiles */,
 			);
 			buildRules = (
 			);

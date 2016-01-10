@@ -1,5 +1,5 @@
 //
-//  JMParingVC.swift
+//  JMPairingVC.swift
 //  MEMESample
 //
 //  Created by Shoya Ishimaru on 2015/11/09.
@@ -32,18 +32,24 @@ class JMPairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
     // MARK: - Utility
     
     func checkMEMEStatus(status: MEMEStatus) {
+        var memeAlert: UIAlertController? = nil
         if status == MEME_ERROR_APP_AUTH {
-            UIAlertView(title: "App Auth Failed", message: "Invalid Application ID or Client Secret", delegate: nil, cancelButtonTitle: "OK").show()
+            memeAlert = UIAlertController(title: "App Auth Failed", message: "Invalid Application ID or Client Secret", preferredStyle: .Alert)
         } else if status == MEME_ERROR_SDK_AUTH {
-            UIAlertView(title: "SDK Auth Failed", message: "Invalid SDK. Please update to the latest SDK.", delegate: nil, cancelButtonTitle: "OK").show()
+            memeAlert = UIAlertController(title: "SDK Auth Failed", message: "Invalid SDK. Please update to the latest SDK.", preferredStyle: .Alert)
         } else if status == MEME_ERROR_SDK_AUTH {
-            UIAlertView(title: "SDK_ERROR", message: "Invalid Command", delegate: nil, cancelButtonTitle: "OK").show()
+            memeAlert = UIAlertController(title: "SDK_ERROR", message: "Invalid Command", preferredStyle: .Alert)
         } else if status == MEME_ERROR_SDK_AUTH {
-            UIAlertView(title: "Error", message: "Bluetooth is off.", delegate: nil, cancelButtonTitle: "OK").show()
+            memeAlert = UIAlertController(title: "Error", message: "Bluetooth is off.", preferredStyle: .Alert)
+        }
+        
+        if let alert = memeAlert {
+            presentViewController(alert, animated: true, completion: nil)
         } else {
-            NSLog("Status: MEME_OK")
+            print("Status: MEME_OK")
         }
     }
+    
 
     // MARK: - Table view data source
     
@@ -71,20 +77,20 @@ class JMPairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
     // MARK: - MEMELib delegate
     
     func memePeripheralFound(peripheral: CBPeripheral!, withDeviceAddress address: String!) {
-        NSLog("found")
+        print("found")
         for p in _peripheralsFound {
             if p.identifier.isEqual(peripheral.identifier){
                 return
             }
         }
         
-        NSLog("MEME Peripheral Found %@", peripheral.identifier.UUIDString)
+        print("MEME Peripheral Found %@", peripheral.identifier.UUIDString)
         _peripheralsFound.append(peripheral)
         tableView.reloadData()
     }
     
     func memePeripheralConnected(peripheral: CBPeripheral!) {
-        NSLog("MEME Device Connected %@", peripheral.identifier.UUIDString)
+        print("MEME Device Connected %@", peripheral.identifier.UUIDString)
         MEMELib.sharedInstance().startDataReport()
         
         SVProgressHUD.dismiss()
@@ -92,7 +98,7 @@ class JMPairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
     }
     
     func memePeripheralDisconnected(peripheral: CBPeripheral!) {
-        NSLog("MEME Device Disconnected")
+        print("MEME Device Disconnected")
     }
     
     func memeAppAuthorized(status: MEMEStatus) {
@@ -100,12 +106,12 @@ class JMPairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
     }
     
     func memeCommandResponse(response: MEMEResponse) {
-        NSLog("Command Response - eventCode: 0x%02x - commandResult: %d", response.eventCode, response.commandResult.boolValue);
+        print("Command Response - eventCode: 0x%02x - commandResult: %d", response.eventCode, response.commandResult.boolValue);
         switch response.eventCode {
         case 0x02:
-            NSLog("Data Report Started")
+            print("Data Report Started")
         case 0x04:
-            NSLog("Data Report Stopped");
+            print("Data Report Stopped");
         default:
             break
         }
