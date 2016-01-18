@@ -15,24 +15,24 @@
 		C66907811BF49523004E7812 /* JMRecordingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66907801BF49523004E7812 /* JMRecordingVC.swift */; };
 		C66907831BF4953E004E7812 /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66907821BF4953E004E7812 /* FileWriter.swift */; };
 		C66907851BF49580004E7812 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C66907841BF49580004E7812 /* SVProgressHUD.framework */; };
-		C673E2271C3F92670086D0A0 /* MEMELib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C673E2261C3F92670086D0A0 /* MEMELib.framework */; };
-		C673E2281C3F92670086D0A0 /* MEMELib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C673E2261C3F92670086D0A0 /* MEMELib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C67D05F81BF0AE5900E63FA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67D05F71BF0AE5900E63FA3 /* AppDelegate.swift */; };
 		C67D05FD1BF0AE5900E63FA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C67D05FB1BF0AE5900E63FA3 /* Main.storyboard */; };
 		C67D05FF1BF0AE5900E63FA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C67D05FE1BF0AE5900E63FA3 /* Assets.xcassets */; };
 		C67D06021BF0AE5900E63FA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C67D06001BF0AE5900E63FA3 /* LaunchScreen.storyboard */; };
 		C67D06101BF0AFC500E63FA3 /* JMPairingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67D060F1BF0AFC500E63FA3 /* JMPairingVC.swift */; };
 		C6F6E5191C4D6CA50084DB13 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6E5181C4D6CA50084DB13 /* UIColor+Hex.swift */; };
+		C6F6E5221C4D88900084DB13 /* MEMELib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F6E5211C4D88900084DB13 /* MEMELib.framework */; };
+		C6F6E5231C4D88900084DB13 /* MEMELib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C6F6E5211C4D88900084DB13 /* MEMELib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C673E2291C3F92670086D0A0 /* Embed Frameworks */ = {
+		C6F6E5241C4D88900084DB13 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C673E2281C3F92670086D0A0 /* MEMELib.framework in Embed Frameworks */,
+				C6F6E5231C4D88900084DB13 /* MEMELib.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,7 +49,6 @@
 		C66907801BF49523004E7812 /* JMRecordingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMRecordingVC.swift; sourceTree = "<group>"; };
 		C66907821BF4953E004E7812 /* FileWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
 		C66907841BF49580004E7812 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
-		C673E2261C3F92670086D0A0 /* MEMELib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MEMELib.framework; sourceTree = "<group>"; };
 		C67D05F41BF0AE5900E63FA3 /* MEMELogger-iOS-developers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MEMELogger-iOS-developers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C67D05F71BF0AE5900E63FA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C67D05FC1BF0AE5900E63FA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		C67D060D1BF0AEF700E63FA3 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		C67D060F1BF0AFC500E63FA3 /* JMPairingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMPairingVC.swift; sourceTree = "<group>"; };
 		C6F6E5181C4D6CA50084DB13 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		C6F6E5211C4D88900084DB13 /* MEMELib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MEMELib.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C673E2271C3F92670086D0A0 /* MEMELib.framework in Frameworks */,
+				C6F6E5221C4D88900084DB13 /* MEMELib.framework in Frameworks */,
 				C66907851BF49580004E7812 /* SVProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,7 +109,7 @@
 				C6174BD31BFBA7250086F19F /* Key.h */,
 				C67D05F61BF0AE5900E63FA3 /* MEMELogger-iOS-developers */,
 				C67D05F51BF0AE5900E63FA3 /* Products */,
-				C673E2261C3F92670086D0A0 /* MEMELib.framework */,
+				C6F6E5211C4D88900084DB13 /* MEMELib.framework */,
 				C66907841BF49580004E7812 /* SVProgressHUD.framework */,
 			);
 			sourceTree = "<group>";
@@ -158,7 +158,7 @@
 				C67D05F11BF0AE5900E63FA3 /* Frameworks */,
 				C67D05F21BF0AE5900E63FA3 /* Resources */,
 				C66907861BF49587004E7812 /* ShellScript */,
-				C673E2291C3F92670086D0A0 /* Embed Frameworks */,
+				C6F6E5241C4D88900084DB13 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -369,6 +369,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/MEMELogger-iOS-developers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shoya140.MEMELogger;
 				PRODUCT_NAME = "MEMELogger-iOS-developers";
@@ -387,6 +388,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/MEMELogger-iOS-developers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shoya140.MEMELogger;
 				PRODUCT_NAME = "MEMELogger-iOS-developers";
