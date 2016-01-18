@@ -26,6 +26,12 @@ class JMRecordingVC: UIViewController, MEMELibDelegate{
         super.viewWillAppear(animated)
         
         MEMELib.sharedInstance().delegate = self
+        
+        if !MEMELib.sharedInstance().isConnected {
+            FileWriter.sharedWriter.stopRecording()
+            self.recordSwitchButton.setTitle("Start Recording", forState: UIControlState.Normal)
+            self.recordSwitchButton.inverse = false
+        }
     }
     
     @IBAction func switchRecording(sender: AnyObject) {
@@ -34,6 +40,9 @@ class JMRecordingVC: UIViewController, MEMELibDelegate{
             self.recordSwitchButton.setTitle("Start Recording", forState: UIControlState.Normal)
             self.recordSwitchButton.inverse = false
         } else {
+            if !MEMELib.sharedInstance().isConnected {
+                return
+            }
             FileWriter.sharedWriter.startRecording()
             self.recordSwitchButton.setTitle("Stop Recording", forState: UIControlState.Normal)
             self.recordSwitchButton.inverse = true
