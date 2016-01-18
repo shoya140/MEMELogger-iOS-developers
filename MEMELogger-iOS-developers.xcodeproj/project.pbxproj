@@ -370,7 +370,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/MEMELogger-iOS-developers/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "shoya140.MEMELogger-iOS-developers";
+				PRODUCT_BUNDLE_IDENTIFIER = shoya140.MEMELogger;
 				PRODUCT_NAME = "MEMELogger-iOS-developers";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/Bridging-Header.h";
 			};
@@ -388,7 +388,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/MEMELogger-iOS-developers/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "shoya140.MEMELogger-iOS-developers";
+				PRODUCT_BUNDLE_IDENTIFIER = shoya140.MEMELogger;
 				PRODUCT_NAME = "MEMELogger-iOS-developers";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/Bridging-Header.h";
 			};
