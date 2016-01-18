@@ -107,10 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				C6174BD31BFBA7250086F19F /* Key.h */,
-				C673E2261C3F92670086D0A0 /* MEMELib.framework */,
-				C66907841BF49580004E7812 /* SVProgressHUD.framework */,
 				C67D05F61BF0AE5900E63FA3 /* MEMELogger-iOS-developers */,
 				C67D05F51BF0AE5900E63FA3 /* Products */,
+				C673E2261C3F92670086D0A0 /* MEMELib.framework */,
+				C66907841BF49580004E7812 /* SVProgressHUD.framework */,
 			);
 			sourceTree = "<group>";
 		};

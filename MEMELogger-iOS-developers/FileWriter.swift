@@ -16,7 +16,6 @@ class FileWriter: NSObject {
     var segmentLabel:Int = 0
     
     private var fileHandle: NSFileHandle?
-    
     private var dateFormatter: NSDateFormatter!
     private let kISO8601Format: String = "yyyy-MM-dd_HH-mm-ss"
     

@@ -12,20 +12,20 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var _numberOfValuesToBeDisplayed: UInt = 20 * 10
-    private var _blinkStrengths: [Double] = [0.0]
-    private var _blinkSpeeds: [Double] = [0.0]
-    private var _verticalEyeMovements: [Double] = [0.0]
-    private var _horizontalEyeMovements: [Double] = [0.0]
-    private var _accXValues: [Double] = [0.0]
-    private var _accYValues: [Double] = [0.0]
-    private var _accZValues: [Double] = [0.0]
-    private var _gyroRValues: [Double] = [0.0]
-    private var _gyroPValues: [Double] = [0.0]
-    private var _gyroYValues: [Double] = [0.0]
-    private var _isWalkings: [Double] = [0.0]
-    private var _fitErrors: [Double] = [0.0]
-    private var _powerLefts: [Double] = [0.0]
+    private var numberOfValuesToBeDisplayed: UInt = 20 * 10
+    private var blinkStrengths: [Double] = [0.0]
+    private var blinkSpeeds: [Double] = [0.0]
+    private var verticalEyeMovements: [Double] = [0.0]
+    private var horizontalEyeMovements: [Double] = [0.0]
+    private var accXValues: [Double] = [0.0]
+    private var accYValues: [Double] = [0.0]
+    private var accZValues: [Double] = [0.0]
+    private var gyroRValues: [Double] = [0.0]
+    private var gyroPValues: [Double] = [0.0]
+    private var gyroYValues: [Double] = [0.0]
+    private var isWalkings: [Double] = [0.0]
+    private var fitErrors: [Double] = [0.0]
+    private var powerLefts: [Double] = [0.0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +92,7 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             case 0:
                 let cell = tableView.dequeueReusableCellWithIdentifier("EyeCell", forIndexPath: indexPath)
                 let eyeView = (cell.viewWithTag(1) as! EyeView)
-                if _blinkStrengths.last! > 0 {
+                if blinkStrengths.last! > 0 {
                     eyeView.eyeOpened = false
                 } else {
                     eyeView.eyeOpened = true
@@ -102,18 +102,18 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             case 1:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Blink Strength"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _blinkStrengths.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", blinkStrengths.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 200
                 (cell.viewWithTag(3) as! GraphView).minimumValue = 0
-                (cell.viewWithTag(3) as! GraphView).values = _blinkStrengths
+                (cell.viewWithTag(3) as! GraphView).values = blinkStrengths
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Blink Speed"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _blinkSpeeds.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", blinkSpeeds.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 200
                 (cell.viewWithTag(3) as! GraphView).minimumValue = 0
-                (cell.viewWithTag(3) as! GraphView).values = _blinkSpeeds
+                (cell.viewWithTag(3) as! GraphView).values = blinkSpeeds
                 return cell
             default:
                 break
@@ -123,18 +123,18 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             case 0:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Vertical Eye Movement"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _verticalEyeMovements.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", verticalEyeMovements.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 3
                 (cell.viewWithTag(3) as! GraphView).minimumValue = -3
-                (cell.viewWithTag(3) as! GraphView).values = _verticalEyeMovements
+                (cell.viewWithTag(3) as! GraphView).values = verticalEyeMovements
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Horizonal Eye Movement"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _horizontalEyeMovements.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", horizontalEyeMovements.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 3
                 (cell.viewWithTag(3) as! GraphView).minimumValue = -3
-                (cell.viewWithTag(3) as! GraphView).values = _horizontalEyeMovements
+                (cell.viewWithTag(3) as! GraphView).values = horizontalEyeMovements
                 return cell
             default:
                 break
@@ -144,50 +144,50 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             case 0:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Acceleration X"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _accXValues.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", accXValues.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 50
                 (cell.viewWithTag(3) as! GraphView).minimumValue = -50
-                (cell.viewWithTag(3) as! GraphView).values = _accXValues
+                (cell.viewWithTag(3) as! GraphView).values = accXValues
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Acceleration Y"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _accYValues.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", accYValues.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 50
                 (cell.viewWithTag(3) as! GraphView).minimumValue = -50
-                (cell.viewWithTag(3) as! GraphView).values = _accYValues
+                (cell.viewWithTag(3) as! GraphView).values = accYValues
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Acceleration Z"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _accZValues.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", accZValues.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 50
                 (cell.viewWithTag(3) as! GraphView).minimumValue = -50
-                (cell.viewWithTag(3) as! GraphView).values = _accZValues
+                (cell.viewWithTag(3) as! GraphView).values = accZValues
                 return cell
             case 3:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Rotation Roll"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _gyroRValues.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", gyroRValues.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 90
                 (cell.viewWithTag(3) as! GraphView).minimumValue = -90
-                (cell.viewWithTag(3) as! GraphView).values = _gyroRValues
+                (cell.viewWithTag(3) as! GraphView).values = gyroRValues
                 return cell
             case 4:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Rotation Pitch"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _gyroPValues.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", gyroPValues.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 180
                 (cell.viewWithTag(3) as! GraphView).minimumValue = -180
-                (cell.viewWithTag(3) as! GraphView).values = _gyroPValues
+                (cell.viewWithTag(3) as! GraphView).values = gyroPValues
                 return cell
             case 5:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Rotation Yaw"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", _gyroYValues.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.2f", gyroYValues.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 360
                 (cell.viewWithTag(3) as! GraphView).minimumValue = 0
-                (cell.viewWithTag(3) as! GraphView).values = _gyroYValues
+                (cell.viewWithTag(3) as! GraphView).values = gyroYValues
                 return cell
             default:
                 break
@@ -197,26 +197,26 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             case 0:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Walking Detection"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _isWalkings.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", isWalkings.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 4
                 (cell.viewWithTag(3) as! GraphView).minimumValue = 0
-                (cell.viewWithTag(3) as! GraphView).values = _isWalkings
+                (cell.viewWithTag(3) as! GraphView).values = isWalkings
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Fit Error"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _fitErrors.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", fitErrors.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 4
                 (cell.viewWithTag(3) as! GraphView).minimumValue = 0
-                (cell.viewWithTag(3) as! GraphView).values = _fitErrors
+                (cell.viewWithTag(3) as! GraphView).values = fitErrors
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Power Left"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _powerLefts.last!)
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", powerLefts.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 5
                 (cell.viewWithTag(3) as! GraphView).minimumValue = 1
-                (cell.viewWithTag(3) as! GraphView).values = _powerLefts
+                (cell.viewWithTag(3) as! GraphView).values = powerLefts
                 return cell
             default:
                 break
@@ -235,107 +235,107 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             FileWriter.sharedWriter.writeData(data)
         }
         
-        _blinkStrengths.append(Double(data.blinkStrength))
-        if _blinkStrengths.count > Int(self._numberOfValuesToBeDisplayed) {
-            _blinkStrengths.removeRange(Range<Int>(
+        blinkStrengths.append(Double(data.blinkStrength))
+        if blinkStrengths.count > Int(self.numberOfValuesToBeDisplayed) {
+            blinkStrengths.removeRange(Range<Int>(
                 start: 0,
-                end: _blinkStrengths.count - Int(_numberOfValuesToBeDisplayed)
+                end: blinkStrengths.count - Int(numberOfValuesToBeDisplayed)
                 ))
         }
         
-        _blinkSpeeds.append(Double(data.blinkSpeed))
-        if _blinkSpeeds.count > Int(self._numberOfValuesToBeDisplayed) {
-            _blinkSpeeds.removeRange(Range<Int>(
+        blinkSpeeds.append(Double(data.blinkSpeed))
+        if blinkSpeeds.count > Int(self.numberOfValuesToBeDisplayed) {
+            blinkSpeeds.removeRange(Range<Int>(
                 start: 0,
-                end: _blinkSpeeds.count - Int(_numberOfValuesToBeDisplayed)
+                end: blinkSpeeds.count - Int(numberOfValuesToBeDisplayed)
                 ))
         }
         
-        _verticalEyeMovements.append(Double(data.eyeMoveUp) - Double(data.eyeMoveDown))
-        if _verticalEyeMovements.count > Int(self._numberOfValuesToBeDisplayed) {
-            _verticalEyeMovements.removeRange(Range<Int>(
+        verticalEyeMovements.append(Double(data.eyeMoveUp) - Double(data.eyeMoveDown))
+        if verticalEyeMovements.count > Int(self.numberOfValuesToBeDisplayed) {
+            verticalEyeMovements.removeRange(Range<Int>(
                 start: 0,
-                end: _verticalEyeMovements.count - Int(_numberOfValuesToBeDisplayed)
+                end: verticalEyeMovements.count - Int(numberOfValuesToBeDisplayed)
                 ))
         }
         
-        _horizontalEyeMovements.append(Double(data.eyeMoveLeft) - Double(data.eyeMoveRight))
-        if _horizontalEyeMovements.count > Int(self._numberOfValuesToBeDisplayed) {
-            _horizontalEyeMovements.removeRange(Range<Int>(
+        horizontalEyeMovements.append(Double(data.eyeMoveLeft) - Double(data.eyeMoveRight))
+        if horizontalEyeMovements.count > Int(self.numberOfValuesToBeDisplayed) {
+            horizontalEyeMovements.removeRange(Range<Int>(
                 start: 0,
-                end: _horizontalEyeMovements.count - Int(_numberOfValuesToBeDisplayed)
+                end: horizontalEyeMovements.count - Int(numberOfValuesToBeDisplayed)
                 ))
         }
         
-        _accXValues.append(Double(data.accX))
-        if _accXValues.count > Int(self._numberOfValuesToBeDisplayed) {
-            _accXValues.removeRange(Range<Int>(
+        accXValues.append(Double(data.accX))
+        if accXValues.count > Int(self.numberOfValuesToBeDisplayed) {
+            accXValues.removeRange(Range<Int>(
                 start: 0,
-                end: _accXValues.count - Int(_numberOfValuesToBeDisplayed)
+                end: accXValues.count - Int(numberOfValuesToBeDisplayed)
                 ))
         }
         
-        _accYValues.append(Double(data.accY))
-        if _accYValues.count > Int(self._numberOfValuesToBeDisplayed) {
-            _accYValues.removeRange(Range<Int>(
+        accYValues.append(Double(data.accY))
+        if accYValues.count > Int(self.numberOfValuesToBeDisplayed) {
+            accYValues.removeRange(Range<Int>(
                 start: 0,
-                end: _accYValues.count - Int(_numberOfValuesToBeDisplayed)
+                end: accYValues.count - Int(numberOfValuesToBeDisplayed)
                 ))
         }
         
-        _accZValues.append(Double(data.accZ))
-        if _accZValues.count > Int(self._numberOfValuesToBeDisplayed) {
-            _accZValues.removeRange(Range<Int>(
+        accZValues.append(Double(data.accZ))
+        if accZValues.count > Int(self.numberOfValuesToBeDisplayed) {
+            accZValues.removeRange(Range<Int>(
                 start: 0,
-                end: _accZValues.count - Int(_numberOfValuesToBeDisplayed)
+                end: accZValues.count - Int(numberOfValuesToBeDisplayed)
                 ))
         }
         
-        _gyroRValues.append(Double(data.roll))
-        if _gyroRValues.count > Int(self._numberOfValuesToBeDisplayed) {
-            _gyroRValues.removeRange(Range<Int>(
+        gyroRValues.append(Double(data.roll))
+        if gyroRValues.count > Int(self.numberOfValuesToBeDisplayed) {
+            gyroRValues.removeRange(Range<Int>(
                 start: 0,
-                end: _gyroRValues.count - Int(_numberOfValuesToBeDisplayed)
+                end: gyroRValues.count - Int(numberOfValuesToBeDisplayed)
                 ))
         }
         
-        _gyroPValues.append(Double(data.pitch))
-        if _gyroPValues.count > Int(self._numberOfValuesToBeDisplayed) {
-            _gyroPValues.removeRange(Range<Int>(
+        gyroPValues.append(Double(data.pitch))
+        if gyroPValues.count > Int(self.numberOfValuesToBeDisplayed) {
+            gyroPValues.removeRange(Range<Int>(
                 start: 0,
-                end: _gyroPValues.count - Int(_numberOfValuesToBeDisplayed)
+                end: gyroPValues.count - Int(numberOfValuesToBeDisplayed)
                 ))
         }
         
-        _gyroYValues.append(Double(data.yaw))
-        if _gyroYValues.count > Int(self._numberOfValuesToBeDisplayed) {
-            _gyroYValues.removeRange(Range<Int>(
+        gyroYValues.append(Double(data.yaw))
+        if gyroYValues.count > Int(self.numberOfValuesToBeDisplayed) {
+            gyroYValues.removeRange(Range<Int>(
                 start: 0,
-                end: _gyroYValues.count - Int(_numberOfValuesToBeDisplayed)
+                end: gyroYValues.count - Int(numberOfValuesToBeDisplayed)
                 ))
         }
         
-        _isWalkings.append(Double(data.isWalking))
-        if _isWalkings.count > Int(self._numberOfValuesToBeDisplayed) {
-            _isWalkings.removeRange(Range<Int>(
+        isWalkings.append(Double(data.isWalking))
+        if isWalkings.count > Int(self.numberOfValuesToBeDisplayed) {
+            isWalkings.removeRange(Range<Int>(
                 start: 0,
-                end: _isWalkings.count - Int(_numberOfValuesToBeDisplayed)
+                end: isWalkings.count - Int(numberOfValuesToBeDisplayed)
                 ))
         }
         
-        _fitErrors.append(Double(data.fitError))
-        if _fitErrors.count > Int(self._numberOfValuesToBeDisplayed) {
-            _fitErrors.removeRange(Range<Int>(
+        fitErrors.append(Double(data.fitError))
+        if fitErrors.count > Int(self.numberOfValuesToBeDisplayed) {
+            fitErrors.removeRange(Range<Int>(
                 start: 0,
-                end: _fitErrors.count - Int(_numberOfValuesToBeDisplayed)
+                end: fitErrors.count - Int(numberOfValuesToBeDisplayed)
                 ))
         }
         
-        _powerLefts.append(Double(data.powerLeft))
-        if _powerLefts.count > Int(self._numberOfValuesToBeDisplayed) {
-            _powerLefts.removeRange(Range<Int>(
+        powerLefts.append(Double(data.powerLeft))
+        if powerLefts.count > Int(self.numberOfValuesToBeDisplayed) {
+            powerLefts.removeRange(Range<Int>(
                 start: 0,
-                end: _powerLefts.count - Int(_numberOfValuesToBeDisplayed)
+                end: powerLefts.count - Int(numberOfValuesToBeDisplayed)
                 ))
         }
         

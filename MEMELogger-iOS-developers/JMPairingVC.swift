@@ -13,17 +13,23 @@ class JMPairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
     
     @IBOutlet weak var tableView: UITableView!
     
-    var _peripheralsFound: Array<CBPeripheral> = []
+    var peripheralsFound: Array<CBPeripheral> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        _peripheralsFound = []
+        peripheralsFound = []
         tableView.dataSource = self
         tableView.delegate = self
 
         MEMELib.sharedInstance().delegate = self
         checkMEMEStatus(MEMELib.sharedInstance().startScanningPeripherals())
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        SVProgressHUD.dismiss()
     }
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
@@ -59,34 +65,33 @@ class JMPairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return _peripheralsFound.count
+        return peripheralsFound.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        cell.textLabel?.text = _peripheralsFound[indexPath.row].identifier.UUIDString
+        cell.textLabel?.text = peripheralsFound[indexPath.row].identifier.UUIDString
         return cell
     }
     
     // MARK: - Table view delegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        MEMELib.sharedInstance().connectPeripheral(_peripheralsFound[indexPath.row])
+        MEMELib.sharedInstance().connectPeripheral(peripheralsFound[indexPath.row])
         SVProgressHUD.showWithStatus("Connecting")
     }
 
     // MARK: - MEMELib delegate
     
     func memePeripheralFound(peripheral: CBPeripheral!, withDeviceAddress address: String!) {
-        print("found")
-        for p in _peripheralsFound {
+        for p in peripheralsFound {
             if p.identifier.isEqual(peripheral.identifier){
                 return
             }
         }
         
         print("MEME Peripheral Found %@", peripheral.identifier.UUIDString)
-        _peripheralsFound.append(peripheral)
+        peripheralsFound.append(peripheral)
         tableView.reloadData()
     }
     
@@ -110,9 +115,9 @@ class JMPairingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
         print("Command Response - eventCode: 0x%02x - commandResult: %d", response.eventCode, response.commandResult.boolValue);
         switch response.eventCode {
         case 0x02:
-            print("Data Report Started")
+            print("MEME Data Report Started")
         case 0x04:
-            print("Data Report Stopped");
+            print("MEME Data Report Stopped");
         default:
             break
         }
