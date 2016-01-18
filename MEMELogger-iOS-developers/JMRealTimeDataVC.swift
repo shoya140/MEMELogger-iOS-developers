@@ -342,4 +342,17 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.tableView.reloadData()
     }
     
+    func memePeripheralDisconnected(peripheral: CBPeripheral!) {
+        let notification = UILocalNotification()
+        notification.alertBody = "The device has been disconnected."
+        notification.soundName = UILocalNotificationDefaultSoundName
+        UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+        
+        if UIApplication.sharedApplication().applicationState == .Active {
+            let alert = UIAlertController(title: "Disconnected", message: "The device has been disconnected.", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
 }

@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         MEMELib.setAppClientId(MEME_APP_ID, clientSecret: MEME_APP_SECRET)
         
+        let settings = UIUserNotificationSettings(forTypes: ([.Sound, .Alert]), categories: nil)
+        application.registerUserNotificationSettings(settings)
+        
         let themeColor = UIColor.hex("#cd1224", alpha: 1.0)
         UINavigationBar.appearance().barTintColor = themeColor
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
