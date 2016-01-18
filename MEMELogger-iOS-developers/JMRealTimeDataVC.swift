@@ -91,6 +91,7 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             switch indexPath.row {
             case 0:
                 let cell = tableView.dequeueReusableCellWithIdentifier("EyeCell", forIndexPath: indexPath)
+                cell.backgroundColor = UIColor.hex("#edf2f8", alpha: 1.0)
                 let eyeView = (cell.viewWithTag(1) as! EyeView)
                 if blinkStrengths.last! > 0 {
                     eyeView.eyeOpened = false

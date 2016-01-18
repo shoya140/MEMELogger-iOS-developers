@@ -156,23 +156,25 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EyeCell" rowHeight="129" id="fwh-sq-aW6">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EyeCell" rowHeight="129" id="fwh-sq-aW6">
                                         <rect key="frame" x="0.0" y="261" width="600" height="129"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fwh-sq-aW6" id="anv-YS-utr">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QM2-Jd-YaD" customClass="EyeView" customModule="MEMELogger_iOS_developers" customModuleProvider="target">
-                                                    <rect key="frame" x="-10" y="0.0" width="640" height="128"/>
+                                                <view tag="1" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="QM2-Jd-YaD" customClass="EyeView" customModule="MEMELogger_iOS_developers" customModuleProvider="target">
+                                                    <rect key="frame" x="100" y="15" width="400" height="99"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="99" id="bYF-nf-ewK"/>
+                                                        <constraint firstAttribute="width" constant="400" id="skE-Jv-raW"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="QM2-Jd-YaD" secondAttribute="bottom" id="7JJ-KK-9z1"/>
-                                                <constraint firstAttribute="trailing" secondItem="QM2-Jd-YaD" secondAttribute="trailing" constant="-30" id="LgV-Cr-nDa"/>
-                                                <constraint firstItem="QM2-Jd-YaD" firstAttribute="leading" secondItem="anv-YS-utr" secondAttribute="leading" constant="-10" id="Zdi-Sv-oSb"/>
-                                                <constraint firstItem="QM2-Jd-YaD" firstAttribute="top" secondItem="anv-YS-utr" secondAttribute="top" id="ggc-3c-rmQ"/>
+                                                <constraint firstItem="QM2-Jd-YaD" firstAttribute="centerY" secondItem="anv-YS-utr" secondAttribute="centerY" id="6KA-lr-8y7"/>
+                                                <constraint firstItem="QM2-Jd-YaD" firstAttribute="centerX" secondItem="anv-YS-utr" secondAttribute="centerX" id="xK6-OJ-Suz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
