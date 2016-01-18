@@ -34,13 +34,11 @@ class JMRecordingVC: UIViewController, MEMELibDelegate{
             FileWriter.sharedWriter.stopRecording()
             self.recordSwitchButton.setTitle("Start Recording", forState: UIControlState.Normal)
             self.recordSwitchButton.inverse = false
-            SVProgressHUD.showSuccessWithStatus("Finished")
         } else {
             FileWriter.sharedWriter.startRecording()
             self.recordSwitchButton.setTitle("Stop Recording", forState: UIControlState.Normal)
             self.recordSwitchButton.inverse = true
             self.segmentSwitch.selectedSegmentIndex = 0
-            SVProgressHUD.showImage(UIImage(named: "icon-recording"), status: "Started")
         }
     }
     

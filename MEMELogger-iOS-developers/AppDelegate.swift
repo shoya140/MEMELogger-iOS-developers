@@ -16,7 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
         MEMELib.setAppClientId(MEME_APP_ID, clientSecret: MEME_APP_SECRET)
+        
+        let themeColor = UIColor.hex("#cd1224", alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = themeColor
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        UITabBar.appearance().tintColor = themeColor
+        UISegmentedControl.appearance().tintColor = themeColor
+        
         return true
     }
 

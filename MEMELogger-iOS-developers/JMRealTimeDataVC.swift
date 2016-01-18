@@ -53,9 +53,9 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         case 1:
             return 2
         case 2:
-            return 7
+            return 6
         case 3:
-            return 2
+            return 3
         default:
             break
         }
@@ -189,14 +189,6 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
                 (cell.viewWithTag(3) as! GraphView).minimumValue = 0
                 (cell.viewWithTag(3) as! GraphView).values = _gyroYValues
                 return cell
-            case 6:
-                let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
-                (cell.viewWithTag(1) as! UILabel).text = "Walking Detection"
-                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _isWalkings.last!)
-                (cell.viewWithTag(3) as! GraphView).maximumValue = 2
-                (cell.viewWithTag(3) as! GraphView).minimumValue = -2
-                (cell.viewWithTag(3) as! GraphView).values = _isWalkings
-                return cell
             default:
                 break
             }
@@ -204,13 +196,21 @@ class JMRealTimeDataVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             switch indexPath.row {
             case 0:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
+                (cell.viewWithTag(1) as! UILabel).text = "Walking Detection"
+                (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _isWalkings.last!)
+                (cell.viewWithTag(3) as! GraphView).maximumValue = 4
+                (cell.viewWithTag(3) as! GraphView).minimumValue = 0
+                (cell.viewWithTag(3) as! GraphView).values = _isWalkings
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Fit Error"
                 (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _fitErrors.last!)
                 (cell.viewWithTag(3) as! GraphView).maximumValue = 4
                 (cell.viewWithTag(3) as! GraphView).minimumValue = 0
                 (cell.viewWithTag(3) as! GraphView).values = _fitErrors
                 return cell
-            case 1:
+            case 2:
                 let cell = tableView.dequeueReusableCellWithIdentifier("GraphCell", forIndexPath: indexPath)
                 (cell.viewWithTag(1) as! UILabel).text = "Power Left"
                 (cell.viewWithTag(2) as! UILabel).text = String(format: "%.0f", _powerLefts.last!)

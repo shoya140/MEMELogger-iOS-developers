@@ -33,13 +33,13 @@ import UIKit
         }
     }
     
-    @IBInspectable var gridColor = UIColor(white: (219.0 / 255.0), alpha: 1.0){
+    @IBInspectable var gridColor: UIColor = UIColor(white: (219.0 / 255.0), alpha: 1.0){
         didSet {
             self.setNeedsDisplay()
         }
     }
     
-    @IBInspectable var lineColor = UIColor.blueColor(){
+    @IBInspectable var lineColor: UIColor = UIColor.blueColor(){
         didSet {
             self.setNeedsDisplay()
         }
